@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %Bundle-Name
+Bundle-SymbolicName: org.eclipse.birt.report.engine.emitter.xml;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.eclipse.birt.report.engine.emitter.xml.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.birt.report.engine
+Bundle-ActivationPolicy: lazy
+Export-Package: org.eclipse.birt.report.engine.emitter.xml
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

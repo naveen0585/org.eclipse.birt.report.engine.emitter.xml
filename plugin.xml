@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.birt.report.engine.emitters">
+      <emitter
+            class="org.eclipse.birt.report.engine.emitter.xml.XMLReportEmitter"
+            format="XML"
+            id="org.eclipse.birt.report.engine.emitter.xml.XMLReportEmitter"
+            mimeType="text/xml"
+            pagination="no-pagination">
+      </emitter>
+   </extension>
+
+</plugin>
