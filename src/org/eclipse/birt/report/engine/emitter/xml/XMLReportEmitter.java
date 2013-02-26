@@ -718,7 +718,14 @@ public class XMLReportEmitter extends ContentEmitterAdapter {
 	    	if ( data.getY() != null )
 	    		propValue = data.getY().toString();
 	    	else 
-	    		propValue = "";	    	break;	    
+	    		propValue = "";
+	    	break;
+	    case 10: //"LabelText":
+	    	propValue = data.getLabelText();
+	    	break;
+	    case 11: //"LabelKey":
+	    	propValue = data.getLabelKey();
+	    	break;
 	    default: propValue = ""; 
     		break;
 	}
@@ -843,7 +850,14 @@ public class XMLReportEmitter extends ContentEmitterAdapter {
 	    	if ( label.getY() != null )
 	    		propValue = label.getY().toString();
 	    	else 
-	    		propValue = "";	    	break;	    
+	    		propValue = "";
+	    	break;
+	    case 9: //"LabelText":
+	    	propValue = label.getLabelText();
+	    	break;
+	    case 10: //"LabelKey":
+	    	propValue = label.getLabelKey();
+	    	break;
 	    default: propValue = ""; 
     		break;
 	}
