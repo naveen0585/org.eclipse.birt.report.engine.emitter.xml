@@ -21,10 +21,10 @@ public class LoadExportSchema{
 	protected String fileName = "";
 
 	protected String startTag = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
-	protected String textTag = "<text>??value</text>";
-	protected String imageTag = "<image>??value</image>";
-	protected String dataTag = "<data name=\"??Name\">??value</data>";
-	protected String labelTag = "<label>??value</label>";
+	protected String textTag = "<text><![CDATA[??value]]></text>";
+	protected String imageTag = "<image><![CDATA[??value]]></image>";
+	protected String dataTag = "<data name=\"??Name\"><![CDATA[??value]]></data>";
+	protected String labelTag = "<label><![CDATA[??value]]></label>";
 	protected String endTag = "</report>";
 	protected String reportTag = "<report>";
 		
