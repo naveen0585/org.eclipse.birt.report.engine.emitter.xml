@@ -27,6 +27,8 @@ public class LoadExportSchema{
 	protected String labelTag = "<label><![CDATA[??value]]></label>";
 	protected String endTag = "</report>";
 	protected String reportTag = "<report>";
+	protected String endRowTag = "</row>";
+	protected String startRowTag = "<row id=\"??rowID\">";
 		
 /**
  * start=<?xml version="1.0" encoding="UTF-8"?>
@@ -77,6 +79,16 @@ public class LoadExportSchema{
 	public String getExportEndTag()
 	{
 		return endTag;
+	}
+	
+	public String getExportStartRowTag()
+	{
+		return startRowTag;
+	}
+	
+	public String getExportEndRowTag()
+	{
+		return endRowTag;
 	}
 
 	public boolean isPropertyRequired( String propValue,  String controlTag )

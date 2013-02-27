@@ -35,4 +35,5 @@ public class XMLTags {
 
 	static String[] tPropList = {"Bookmark","Height","Hyperlink","InlineStyle","Name","Style","TOC","Width","X","Y"};
 	static String[] rPropList = {"TotalPages", "TOCTree", "Name"};
+	static String[] rowPropList = {"rowID"};
 }

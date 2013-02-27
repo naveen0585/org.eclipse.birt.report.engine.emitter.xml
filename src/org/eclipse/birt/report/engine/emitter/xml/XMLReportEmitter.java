@@ -302,8 +302,18 @@ public class XMLReportEmitter extends ContentEmitterAdapter {
 
 	public void startRow( IRowContent row )
 	{
-		assert row != null;
-		
+		logger.log( Level.FINE, "[XMLReportEmitter] Start row." ); //$NON-NLS-1$
+		String txt = exportSchema.getExportStartRowTag();
+		for (int i = 0;i < XMLTags.rowPropList.length;i++)
+		{
+			if (exportSchema.isPropertyRequired(XMLTags.rowPropList[i], txt))
+			{
+				String propValue = getRowPropValue(i, row);
+				txt = replaceTag( txt, "??"+XMLTags.rowPropList[i], propValue );
+			}
+		}		
+		writer.writeCode(txt);
+		writer.closeTag( XMLTags.TAG_CR );
 	}
 
 
@@ -315,7 +325,9 @@ public class XMLReportEmitter extends ContentEmitterAdapter {
 	 */
 	public void endRow( IRowContent row )
 	{
-		
+		logger.log( Level.FINE, "[XMLReportEmitter] End row." ); //$NON-NLS-1$
+		writer.closeTag( exportSchema.getExportEndRowTag());
+		writer.closeTag( XMLTags.TAG_CR );	
 	}
 
 	/*
@@ -906,5 +918,27 @@ public class XMLReportEmitter extends ContentEmitterAdapter {
 			propValue = "";
 		return propValue;
 	}
+	
+	/**
+	 * 
+	 * @param property
+	 * @param report
+	 * @return
+	 */
+	private String getRowPropValue(int property, IRowContent row)
+	{
+		String propValue;
+		//static String[] rPropList = {"TotalPages", "TOCTree"};
 
+		switch (property) { 
+	      case 0: // "rowID":
+	    	propValue = new Integer(row.getRowID()).toString();
+	    	break;
+	      default: propValue = ""; 
+    		break;
+		}
+		if ( propValue == null ) 
+			propValue = "";
+		return propValue;
+	}
 }
