@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URL;
+import java.util.Map;
 // import java.util.Stack;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -385,7 +386,7 @@ public class XMLReportEmitter extends ContentEmitterAdapter {
 	{
 
 		logger.log( Level.FINE, "[XMLReportEmitter] Start text" ); //$NON-NLS-1$
-		String txt = exportSchema.getExportLabelTag();
+		String txt = exportSchema.getExportTextTag();
 		// label=<label:??name>??value</label>
 		// int len =  XMLTags.lPropList.length;
 		for (int i = 0;i < XMLTags.lPropList.length;i++)
@@ -397,7 +398,7 @@ public class XMLReportEmitter extends ContentEmitterAdapter {
 			}
 		}		
 		
-		String textValue = text.getText( );
+		String textValue = text.getText();
 		writer.writeCode( replaceTag( txt, XMLTags.valueTag, textValue ) );
 
 		writer.closeTag( XMLTags.TAG_CR );
@@ -737,6 +738,15 @@ public class XMLReportEmitter extends ContentEmitterAdapter {
 	    	break;
 	    case 11: //"LabelKey":
 	    	propValue = data.getLabelKey();
+	    	break;
+	    case 12: //"DataKey":
+	    	try {
+	    	  String prop = "DataKey";
+	    	  Map<String, Object> userProp = data.getUserProperties();
+	    	  propValue = userProp.get(prop).toString();
+	    	} catch (Exception e) {
+	    	  propValue = "";
+	    	}
 	    	break;
 	    default: propValue = ""; 
     		break;
