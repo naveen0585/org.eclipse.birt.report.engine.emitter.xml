@@ -23,7 +23,7 @@ public class LoadExportSchema{
 	protected String startTag = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>";
 	protected String textTag = "<text><![CDATA[??value]]></text>";
 	protected String imageTag = "<image><![CDATA[??value]]></image>";
-	protected String dataTag = "<data name=\"??Name\" key=\"??DataKey\"><![CDATA[??value]]></data>";
+	protected String dataTag = "<data name=\"??Name\" key=\"??DataKey\" desc=\"??DataDesc\"><![CDATA[??value]]></data>";
 	protected String labelTag = "<label><![CDATA[??value]]></label>";
 	protected String endTag = "</report>";
 	protected String reportTag = "<report>";

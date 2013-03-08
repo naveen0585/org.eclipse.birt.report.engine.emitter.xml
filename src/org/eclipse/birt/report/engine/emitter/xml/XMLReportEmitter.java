@@ -748,6 +748,15 @@ public class XMLReportEmitter extends ContentEmitterAdapter {
 	    	  propValue = "";
 	    	}
 	    	break;
+	    case 13: //"DataDesc":
+	    	try {
+	    	  String prop = "DataDesc";
+	    	  Map<String, Object> userProp = data.getUserProperties();
+	    	  propValue = userProp.get(prop).toString();
+	    	} catch (Exception e) {
+	    	  propValue = "";
+	    	}
+	    	break;
 	    default: propValue = ""; 
     		break;
 	}

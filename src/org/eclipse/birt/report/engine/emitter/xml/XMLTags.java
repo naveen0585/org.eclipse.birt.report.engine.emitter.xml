@@ -30,7 +30,7 @@ public class XMLTags {
 	static String endControl = "end";
 
 	static String[] iPropList = {"Bookmark","Height","Hyperlink","ImageMap","InlineStyle","MIMEType","Name","Style","TOC","URI","Width","X","Y"};
-	static String[] dPropList = {"Bookmark","Height","Hyperlink","InlineStyle","Name","Style","TOC","Width","X","Y","LabelText","LabelKey","DataKey"};
+	static String[] dPropList = {"Bookmark","Height","Hyperlink","InlineStyle","Name","Style","TOC","Width","X","Y","LabelText","LabelKey","DataKey","DataDesc"};
 	static String[] lPropList = {"Bookmark","Height","Hyperlink","InlineStyle","Name","TOC","Width","X","Y","LabelText","LabelKey"};
 
 	static String[] tPropList = {"Bookmark","Height","Hyperlink","InlineStyle","Name","Style","TOC","Width","X","Y"};
